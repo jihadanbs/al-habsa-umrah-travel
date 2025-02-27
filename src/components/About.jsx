@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div id='About' className="mt-8 max-w-5xl mx-10 lg:mx-auto flex flex-col lg:flex-row items-center justify-center overflow-hidden">
-      {/* Left Side - Image */}
+      {/* Kiri pada mode Desktop*/}
       <div className="lg:w-1/2 w-full mb-6 lg:mb-0 lg:mr-8">
         <img
           src="/img/about.jpg"
@@ -12,7 +12,7 @@ const About = () => {
         />
       </div>
       
-      {/* Right Side - Content */}
+      {/* Kana pada mode Desktop */}
       <div className="lg:w-1/2 w-full p-2 md:p-6 bg-white">
         <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-800">
           Memberikan Pelayanan Haji & Umrah Yang Terbaik Untuk Para Jamaah

@@ -41,7 +41,7 @@ const Navbar = () => {
     { label: 'Book', href: '#Book' },
     { label: 'About', href: '#About' },
     { label: 'Galeri', href: '#Galeri' },
-    { label: 'Mitra', href: '#Mitra' },
+    { label: 'Contact', href: '#Contact' },
     
   ];
 
