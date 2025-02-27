@@ -22,13 +22,10 @@ const Navbar = () => {
    // scroll effect
    useEffect(() => {
     const handleScroll = () => {
-     
       setIsScrolled(window.scrollY > 50);
     };
-
     // Tambah scroll event listener
     window.addEventListener('scroll', handleScroll);
-
     // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -43,12 +40,6 @@ const Navbar = () => {
     { label: 'Galeri', href: '#Galeri' },
     { label: 'Contact', href: '#Contact' },
     
-  ];
-
-  // Item tambahan saat mode mobile
-  const additionalItems = [
-    { label: 'Hotels', href: '#hotels', icon: '↗' },
-    { label: 'Cars', href: '#cars', icon: '↗' }
   ];
 
   return (
@@ -280,20 +271,7 @@ const Navbar = () => {
               ))}
             </nav>
 
-            {/* Additional Items */}
-            <div className="space-y-4 mb-6">
-              {additionalItems.map((item, index) => (
-                <a 
-                  key={index} 
-                  href={item.href} 
-                  onClick={() => setShowMobileMenu(false)}
-                  className=" py-3 text-utama border-b flex justify-between items-center"
-                >
-                  {item.label}
-                  <span>{item.icon}</span>
-                </a>
-              ))}
-            </div>
+           
 
             {/* Send Feedback Button */}
             <div className="fixed bottom-0 right-0 m-4">
