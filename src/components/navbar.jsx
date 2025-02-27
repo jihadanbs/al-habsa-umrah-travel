@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   
-  // Prevent body scroll when mobile menu or search modal is open
+  // Mencegah navbar tidak menutup ketika di scroll
   useEffect(() => {
     if (showMobileMenu || showSearchModal) {
       document.body.style.overflow = 'hidden';
@@ -18,16 +18,34 @@ const Navbar = () => {
     };
   }, [showMobileMenu, showSearchModal]);
 
-  // Array navbar
+
+   // scroll effect
+   useEffect(() => {
+    const handleScroll = () => {
+     
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    // Tambah scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Array npada  navbar link
   const navItems = [
     { label: 'Home', href: '#Home' },
+    { label: 'Book', href: '#Book' },
     { label: 'About', href: '#About' },
     { label: 'Galeri', href: '#Galeri' },
     { label: 'Mitra', href: '#Mitra' },
     
   ];
 
-  // Item tambahan
+  // Item tambahan saat mode mobile
   const additionalItems = [
     { label: 'Hotels', href: '#hotels', icon: '↗' },
     { label: 'Cars', href: '#cars', icon: '↗' }
@@ -36,40 +54,59 @@ const Navbar = () => {
   return (
     <div className="relative">
       {/* Desktop Navbar */}
-      <div className="hidden md:block fixed top-0 left-0 w-full bg-white shadow-md z-40">
+      <div 
+        className={`
+          hidden md:block fixed top-0 left-0 w-full z-40 transition-all duration-300
+          ${isScrolled 
+            ? 'bg-slate-200 shadow-md text-gray-800' 
+            : 'bg-transparent text-white'
+          }
+        `}
+      >
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src="/vite.svg" 
               alt="Logo" 
-              className="h-8 mr-8" 
+              className={`h-8 mr-8 `}
             />
           </div>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop navbar Links */}
           <nav className="flex space-x-6">
             {navItems.map((item, index) => (
               <a 
                 key={index} 
                 href={item.href} 
-                className="text-gray-700 hover:text-green-600 transition-colors"
+                className={`
+                  transition-colors 
+                  ${isScrolled 
+                    ? 'text-gray-700 hover:text-green-600' 
+                    : 'text-white hover:text-gray-200'
+                  }
+                `}
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* kana mode desktop */}
+          {/* Kanan mode desktop */}
           <div className="flex items-center space-x-4">
             {/* Search Button */}
             <button 
               onClick={() => setShowSearchModal(true)}
-              className="p-2 hover:bg-gray-100 rounded-full"
+              className={`p-2 rounded-full 
+                ${isScrolled 
+                  ? 'hover:bg-gray-100 text-gray-700' 
+                  : 'hover:bg-white/20 text-white'
+                }
+              `}
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                className="h-6 w-6 text-gray-700" 
+                className="h-6 w-6" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
@@ -84,7 +121,14 @@ const Navbar = () => {
             </button>
 
             {/* Login Button */}
-            <button className="bg-utama text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
+            <button 
+              className={`px-4 py-2 rounded-md transition-colors 
+                ${isScrolled 
+                  ? 'bg-green-600 text-white hover:bg-green-700' 
+                  : 'bg-white text-green-600 hover:bg-white/90'
+                }
+              `}
+            >
               Login
             </button>
           </div>

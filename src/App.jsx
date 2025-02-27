@@ -1,6 +1,9 @@
 
 
-import Navbar from './components/navbar'
+
+import Header from './components/Header'
+import Book from './components/Book'
+import About from './components/About'
 import './App.css'
 
 function App() {
@@ -8,7 +11,11 @@ function App() {
 
   return (
     <>
-      <Navbar />
+   
+      <Header/>
+      <Book/>
+      <About/>
+      <div className='h-48'></div>
     </>
   )
 }
