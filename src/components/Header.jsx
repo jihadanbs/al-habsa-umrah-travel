@@ -43,7 +43,7 @@ const Header = () => {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden" id='Home'>
       <Navbar />
       {slides.map((slide, index) => (
         <div 

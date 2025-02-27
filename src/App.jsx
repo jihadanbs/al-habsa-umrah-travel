@@ -4,6 +4,7 @@
 import Header from './components/Header'
 import Book from './components/Book'
 import About from './components/About'
+import Galeri from './components/Galeri'
 import './App.css'
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       <Header/>
       <Book/>
       <About/>
-      <div className='h-48'></div>
+      <Galeri/>
+     
     </>
   )
 }
