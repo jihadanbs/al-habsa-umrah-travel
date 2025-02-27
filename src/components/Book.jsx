@@ -27,8 +27,8 @@ const Book = () => {
 
   // Data dummy
   const months = [
-    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 
-    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    'Januari 2025', 'Februari 2025', 'Maret 2025', 'April 2025', 'Mei 2025', 'Juni 2025', 
+    'Juli 2025', 'Agustus 2025', 'September 2025', 'Oktober 2025', 'November 2025', 'Desember 2025'
   ];
 
   // Data paket untuk setiap jenis perjalanan
