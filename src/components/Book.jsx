@@ -47,7 +47,7 @@ const Book = () => {
   };
 
   return (
-    <div className="max-w-5xl mt-10 mx-10  md:mx-auto p-6 bg-white rounded-lg shadow-md shadow-slate-500" id='#Book'>
+    <div className="max-w-5xl mt-10 mx-10  md:mx-auto p-6 bg-white rounded-lg shadow-md shadow-slate-500" id='Book'>
       <h1 className="text-2xl font-bold mb-6">Book</h1>
 
       {/* Pilihan Perjalanan */}
