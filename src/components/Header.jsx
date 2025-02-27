@@ -10,14 +10,14 @@ const Header = () => {
   const slides = [
     {
       title: 'Dapatkan diskon 22% untuk penerbangan ke Arab Saudi',
-      backgroundImage: 'url-to-saudi-arabia-image',
+      backgroundImage: '/img/banner1.jpg',
       ctaText: 'Pesan Sekarang',
-      ctaLink: '#pesan-penerbangan'
+      ctaLink: '#Book'
     },
     // Tambahkan slide lainnya sesuai kebutuhan
     {
       title: 'Temukan Keajaiban Arab Saudi',
-      backgroundImage: 'url-to-another-saudi-image',
+      backgroundImage: '/img/banner2.jpg',
       ctaText: 'Jelajahi Destinasi',
       ctaLink: '#destinasi'
     }
@@ -50,10 +50,10 @@ const Header = () => {
           key={index}
           className={`
             absolute inset-0 transition-opacity duration-1000 ease-in-out
-            ${index === currentSlide ? 'opacity-100' : 'opacity-0'}
+            ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}
           `}
           style={{
-            backgroundImage: slide.backgroundImage,
+            backgroundImage: `url(${slide.backgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
@@ -65,7 +65,11 @@ const Header = () => {
               </h1>
               <a 
                 href={slide.ctaLink}
-                className="inline-block bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition-colors"
+                className="inline-block bg-[#222636] text-white px-6 py-3 rounded-md hover:bg-[#2E3650] transition-colors relative z-20 cursor-pointer"
+                onClick={(e) => {
+                  console.log("Tombol diklik");
+                  //tambahan kode yang ingin dijalankan saat tombol diklik nantinya
+                }}
               >
                 {slide.ctaText}
               </a>
@@ -77,7 +81,7 @@ const Header = () => {
       {/* Tombol Navigasi */}
       <button 
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 transition-colors"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 transition-colors z-30"
       >
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -96,7 +100,7 @@ const Header = () => {
       </button>
       <button 
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 transition-colors"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 transition-colors z-30"
       >
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -115,7 +119,7 @@ const Header = () => {
       </button>
 
       {/* Indikator Slide */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {slides.map((_, index) => (
           <button
             key={index}

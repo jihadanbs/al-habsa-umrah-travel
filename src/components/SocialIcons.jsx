@@ -5,10 +5,10 @@ const SocialIcons = () => {
     <div className="fixed bottom-4 right-4 z-50 flex flex-col space-y-2">
     
       <a 
-        href="#" 
+        href="https://api.whatsapp.com/send/?phone=%2B6281329196100&text&type=phone_number&app_absent=0" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+        className="bg-[#222636] text-green-400 p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
         aria-label="WhatsApp"
       >
         <svg 
@@ -24,10 +24,10 @@ const SocialIcons = () => {
       
     
       <a 
-        href="#" 
+        href="https://www.instagram.com/alhabsa.travel/" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+        className="bg-[#222636] text-red-400 p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
         aria-label="Instagram"
       >
         <svg 

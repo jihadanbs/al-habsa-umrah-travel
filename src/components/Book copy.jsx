@@ -74,50 +74,6 @@ const Book = () => {
     setTravelType(newType);
   };
 
-  // Fungsi untuk mengirim pesan ke WhatsApp
-  const sendToWhatsApp = () => {
-    // Validasi form
-    if (!selectedMonth) {
-      alert('Silakan pilih bulan keberangkatan');
-      return;
-    }
-    
-    if (!selectedPackage) {
-      alert('Silakan pilih jenis paket');
-      return;
-    }
-
-    // Terjemahan jenis perjalanan
-    const travelTypeText = {
-      'umroh-reguler': 'Umroh Reguler',
-      'umroh-plus': 'Umroh Plus',
-      'haji': 'Haji'
-    };
-
-    // Format pesan
-    const message = `*Permintaan Informasi Keberangkatan*
-    
-Jenis Perjalanan: ${travelTypeText[travelType]}
-Bulan Keberangkatan: ${selectedMonth}
-Jenis Paket: ${selectedPackage}
-Jumlah Penumpang: ${passengers.adults} Dewasa, ${passengers.children} Anak
-${promoCode ? `Kode Promo: ${promoCode}` : ''}
-
-Mohon informasi lebih lanjut mengenai ketersediaan dan harga untuk paket ini. Terima kasih.`;
-
-    // Format pesan untuk URL (encode)
-    const encodedMessage = encodeURIComponent(message);
-    
-    // Nomor WhatsApp
-    const phoneNumber = '6281326109287';
-    
-    // URL WhatsApp
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    // Buka URL WhatsApp
-    window.open(whatsappURL, '_blank');
-  };
-
   return (
     <div className="max-w-5xl mt-10 mx-10 md:mx-auto p-6 bg-white rounded-lg shadow-md shadow-slate-500" id='Book'>
       <h1 className="text-2xl font-bold mb-6">Pemesanan</h1>
@@ -304,10 +260,7 @@ Mohon informasi lebih lanjut mengenai ketersediaan dan harga untuk paket ini. Te
             placeholder="Masukkan kode promo" 
             className="flex-grow p-2 border rounded"
           />
-          <button 
-            onClick={sendToWhatsApp}
-            className="bg-[#222636] text-white px-6 py-2 rounded hover:bg-[#2E3650] transition-colors"
-          >
+          <button className="bg-[#222636] text-white px-6 py-2 rounded hover:bg-[#2E3650] transition-colors">
             Cari Keberangkatan
           </button>
         </div>

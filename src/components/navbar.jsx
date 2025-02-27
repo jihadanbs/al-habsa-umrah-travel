@@ -34,11 +34,11 @@ const Navbar = () => {
 
   // Array npada  navbar link
   const navItems = [
-    { label: 'Home', href: '#Home' },
-    { label: 'Book', href: '#Book' },
-    { label: 'About', href: '#About' },
+    { label: 'Beranda', href: '#Home' },
+    { label: 'Pemesanan', href: '#Book' },
+    { label: 'Tentang Kami', href: '#About' },
     { label: 'Galeri', href: '#Galeri' },
-    { label: 'Contact', href: '#Contact' },
+    { label: 'Kontak', href: '#Contact' },
     
   ];
 
@@ -49,7 +49,7 @@ const Navbar = () => {
         className={`
           hidden md:block fixed top-0 left-0 w-full z-40 transition-all duration-300
           ${isScrolled 
-            ? 'bg-slate-200 shadow-md text-gray-800' 
+            ? 'bg-[#222636] shadow-md text-white' 
             : 'bg-transparent text-white'
           }
         `}
@@ -58,7 +58,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/vite.svg" 
+              src="/img/logo.jpg" 
               alt="Logo" 
               className={`h-8 mr-8 `}
             />
@@ -73,7 +73,7 @@ const Navbar = () => {
                 className={`
                   transition-colors 
                   ${isScrolled 
-                    ? 'text-gray-700 hover:text-green-600' 
+                    ? 'text-white hover:text-[#ECECE3]' 
                     : 'text-white hover:text-gray-200'
                   }
                 `}
@@ -90,7 +90,7 @@ const Navbar = () => {
               onClick={() => setShowSearchModal(true)}
               className={`p-2 rounded-full 
                 ${isScrolled 
-                  ? 'hover:bg-gray-100 text-gray-700' 
+                  ? 'hover:bg-gray-700 text-white' 
                   : 'hover:bg-white/20 text-white'
                 }
               `}
@@ -115,8 +115,8 @@ const Navbar = () => {
             <button 
               className={`px-4 py-2 rounded-md transition-colors 
                 ${isScrolled 
-                  ? 'bg-green-600 text-white hover:bg-green-700' 
-                  : 'bg-white text-green-600 hover:bg-white/90'
+                  ? 'bg-white text-black hover:bg-[#ECECE3]' 
+                  : 'bg-white text-black hover:bg-white/90'
                 }
               `}
             >
@@ -132,7 +132,7 @@ const Navbar = () => {
           <div className="w-full p-4">
             <div className="flex items-center max-w-4xl mx-auto">
               <img 
-                src="/vite.svg" 
+                src="/img/logo.jpg" 
                 alt="Logo" 
                 className="h-8 mr-4" 
               />
@@ -173,7 +173,7 @@ const Navbar = () => {
       <div className="md:hidden fixed top-0 left-0 w-full bg-white shadow-md z-40">
         <div className="flex justify-between items-center p-4">
           <img 
-            src="/vite.svg" 
+            src="/img/logo.jpg" 
             alt="Logo" 
             className="h-8" 
           />
@@ -206,7 +206,7 @@ const Navbar = () => {
             {/* Mobile Menu Header */}
             <div className="flex justify-between items-center mb-4">
               <img 
-                src="/vite.svg" 
+                src="/img/logo.jpg" 
                 alt="Saudia Logo" 
                 className="h-8" 
               />
@@ -275,7 +275,7 @@ const Navbar = () => {
 
             {/* Send Feedback Button */}
             <div className="fixed bottom-0 right-0 m-4">
-              <button className="bg-utama text-white px-4 py-2 rounded-lg">
+              <button className="bg-green-600 text-white px-4 py-2 rounded-lg">
                 Login
               </button>
             </div>

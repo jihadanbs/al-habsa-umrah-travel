@@ -6,14 +6,17 @@ const About = () => {
       {/* Kiri pada mode Desktop*/}
       <div className="lg:w-1/2 w-full mb-6 lg:mb-0 lg:mr-8">
         <img
-          src="/img/about.jpg"
+          src="/img/foto1.jpg"
           alt="Kaabah at Masjidil Haram"
           className="w-full h-auto object-cover rounded-lg shadow-lg"
         />
       </div>
-      
+
       {/* Kana pada mode Desktop */}
       <div className="lg:w-1/2 w-full p-2 md:p-6 bg-white">
+        <h3 className="text-2xl lg:text-3xl font-reguler mb-4 text-gray-800">
+            Tentang Kami
+        </h3>
         <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-800">
           Memberikan Pelayanan Haji & Umrah Yang Terbaik Untuk Para Jamaah
         </h2>
@@ -31,7 +34,7 @@ const About = () => {
           </p>
         </div>
         
-        <button className="mt-6 bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800 transition-colors">
+        <button className="mt-6 bg-[#222636] text-white py-2 px-4 rounded-md hover:bg-[#2E3650] transition-colors">
           Tentang Kami
         </button>
       </div>

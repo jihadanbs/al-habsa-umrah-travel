@@ -1,90 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Contact = () => {
-  // State untuk menyimpan data form
-  const [formData, setFormData] = useState({
-    nama: '',
-    email: '',
-    telepon: '',
-    subjek: '',
-    pesan: ''
-  });
-
-  // State untuk menampilkan pesan error
-  const [errors, setErrors] = useState({});
-
-  // Fungsi untuk menghandle perubahan input
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  // Fungsi validasi form
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.nama.trim()) {
-      newErrors.nama = 'Nama tidak boleh kosong';
-    }
-    
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email tidak boleh kosong';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Format email tidak valid';
-    }
-    
-    if (!formData.telepon.trim()) {
-      newErrors.telepon = 'Nomor telepon tidak boleh kosong';
-    }
-    
-    if (!formData.subjek || formData.subjek === 'Pilih Subjek') {
-      newErrors.subjek = 'Silakan pilih subjek';
-    }
-    
-    if (!formData.pesan.trim()) {
-      newErrors.pesan = 'Pesan tidak boleh kosong';
-    }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  // Fungsi untuk mengirim pesan ke WhatsApp
-  const sendToWhatsApp = (e) => {
-    e.preventDefault();
-    
-    // Validasi form
-    if (!validateForm()) {
-      return;
-    }
-    
-    // Format pesan untuk WhatsApp
-    const message = `*Pesan dari Formulir Pengaduan*
-    
-Nama: ${formData.nama}
-Email: ${formData.email}
-Telepon: +62 ${formData.telepon}
-Subjek: ${formData.subjek}
-    
-Pesan:
-${formData.pesan}`;
-
-    // Format pesan untuk URL (encode)
-    const encodedMessage = encodeURIComponent(message);
-    
-    // Nomor WhatsApp
-    const phoneNumber = '6281326109287';
-    
-    // URL WhatsApp
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    // Buka URL WhatsApp
-    window.open(whatsappURL, '_blank');
-  };
-
   return (
     <div className="container mx-auto px-6 md:px-10 lg:px-16 py-12" id='Contact'>
       <h1 className="text-4xl font-bold text-center text-[#222636] mb-12">Hubungi Kami</h1>
@@ -121,33 +37,25 @@ ${formData.pesan}`;
         
         {/* Kanan pada desktop */}
         <div className="px-2">
-          <form className="bg-white shadow-lg rounded-xl p-8 border border-gray-200" onSubmit={sendToWhatsApp}>
+          <form className="bg-white shadow-lg rounded-xl p-8 border border-gray-200">
             <h2 className="text-2xl font-semibold text-[#222636] mb-8">Formulir Pengaduan</h2>
             
             <div className="mb-6">
               <label className="block text-gray-700 mb-2">Nama Lengkap<span className="text-red-500">*</span></label>
               <input 
                 type="text" 
-                name="nama"
-                value={formData.nama}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.nama ? 'border-red-500' : ''}`}
+                className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none"
                 placeholder="Masukkan nama anda"
               />
-              {errors.nama && <p className="text-red-500 text-sm mt-1">{errors.nama}</p>}
             </div>
             
             <div className="mb-6">
               <label className="block text-gray-700 mb-2">Email<span className="text-red-500">*</span></label>
               <input 
                 type="email" 
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.email ? 'border-red-500' : ''}`}
+                className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none"
                 placeholder="email@gmail.com"
               />
-              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
             </div>
             
             <div className="mb-6">
@@ -158,43 +66,31 @@ ${formData.pesan}`;
                 </span>
                 <input 
                   type="tel" 
-                  name="telepon"
-                  value={formData.telepon}
-                  onChange={handleChange}
-                  className={`flex-1 px-4 py-3 border rounded-r-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.telepon ? 'border-red-500' : ''}`}
+                  className="flex-1 px-4 py-3 border rounded-r-md focus:ring-2 focus:ring-[#222636] focus:outline-none"
                   placeholder="882-1234-5678"
                 />
               </div>
-              {errors.telepon && <p className="text-red-500 text-sm mt-1">{errors.telepon}</p>}
             </div>
             
             <div className="mb-6">
               <label className="block text-gray-700 mb-2">Subjek<span className="text-red-500">*</span></label>
               <select 
-                name="subjek"
-                value={formData.subjek}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.subjek ? 'border-red-500' : ''}`}
+                className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none"
               >
                 <option>Pilih Subjek</option>
                 <option>Informasi Paket Umroh</option>
                 <option>Kendala Pemesanan</option>
                 <option>Testimoni & Masukan</option>
               </select>
-              {errors.subjek && <p className="text-red-500 text-sm mt-1">{errors.subjek}</p>}
             </div>
             
             <div className="mb-6">
               <label className="block text-gray-700 mb-2">Pesan<span className="text-red-500">*</span></label>
               <textarea 
-                name="pesan"
-                value={formData.pesan}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.pesan ? 'border-red-500' : ''}`}
+                className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none"
                 rows="4"
                 placeholder="Masukkan isi pesan anda"
               ></textarea>
-              {errors.pesan && <p className="text-red-500 text-sm mt-1">{errors.pesan}</p>}
             </div>
             
             <button 
