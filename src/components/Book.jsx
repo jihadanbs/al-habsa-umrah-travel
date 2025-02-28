@@ -89,8 +89,8 @@ const Book = () => {
 
     // Terjemahan jenis perjalanan
     const travelTypeText = {
-      'umroh-reguler': 'Umroh Reguler',
-      'umroh-plus': 'Umroh Plus',
+      'umroh-reguler': 'Umrah Reguler',
+      'umroh-plus': 'Umrah Plus',
       // 'haji': 'Haji'
     };
 
@@ -143,7 +143,7 @@ Wassalamu'alaikum warahmatullahi wabarakatuh.
             onChange={() => handleTravelTypeChange('umroh-reguler')}
             className="mr-2"
           />
-          Umroh Reguler
+          Umrah Reguler
         </label>
         <label className="flex items-center">
           <input 
@@ -154,7 +154,7 @@ Wassalamu'alaikum warahmatullahi wabarakatuh.
             onChange={() => handleTravelTypeChange('umroh-plus')}
             className="mr-2"
           />
-          Umroh Plus
+          Umrah Plus
         </label>
         {/* <label className="flex items-center">
           <input 
