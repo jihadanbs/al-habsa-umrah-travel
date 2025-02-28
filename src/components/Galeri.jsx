@@ -19,7 +19,7 @@ const Galeri = () => {
     },
     {
       src: "/img/foto1.jpg",
-      alt: "Udaibiyyah"
+      alt: "Hudaibiyyah"
     },
     {
       src: "/img/foto5.jpg",
