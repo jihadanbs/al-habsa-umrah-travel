@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = () => {
   return (
     <div className="container mx-auto px-6 md:px-10 lg:px-16 py-12" id='Contact'>
-      <h1 className="text-4xl font-bold text-center text-[#222636] mb-12">KUESIONER KEPUASAN JAMAAH</h1>
+      <h1 className="text-4xl font-bold text-center text-[#222636] mb-12">Hubungi Kami</h1>
       
       <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto">
         {/* Kiri pada desktop */}
