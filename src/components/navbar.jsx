@@ -49,7 +49,7 @@ const Navbar = () => {
         className={`
           hidden md:block fixed top-0 left-0 w-full z-40 transition-all duration-300
           ${isScrolled 
-            ? 'bg-[#222636] shadow-md text-white' 
+            ? 'bg-[#D3D3D3] shadow-md text-white' 
             : 'bg-transparent text-white'
           }
         `}
@@ -58,7 +58,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/img/logo.jpg" 
+              src="/img/alhabsalogo.png" 
               alt="Logo" 
               className={`h-8 mr-8 `}
             />
@@ -73,7 +73,7 @@ const Navbar = () => {
                 className={`
                   transition-colors 
                   ${isScrolled 
-                    ? 'text-white hover:text-[#ECECE3]' 
+                    ? 'text-[#222636] hover:text-white' 
                     : 'text-white hover:text-gray-200'
                   }
                 `}
@@ -115,7 +115,7 @@ const Navbar = () => {
             <button 
               className={`px-4 py-2 rounded-md transition-colors 
                 ${isScrolled 
-                  ? 'bg-white text-black hover:bg-[#ECECE3]' 
+                  ? 'bg-[#222636] text-white hover:bg-[#2E3650]' 
                   : 'bg-white text-black hover:bg-white/90'
                 }
               `}
@@ -132,7 +132,7 @@ const Navbar = () => {
           <div className="w-full p-4">
             <div className="flex items-center max-w-4xl mx-auto">
               <img 
-                src="/img/logo.jpg" 
+                src="/img/alhabsalogo.png" 
                 alt="Logo" 
                 className="h-8 mr-4" 
               />
@@ -173,7 +173,7 @@ const Navbar = () => {
       <div className="md:hidden fixed top-0 left-0 w-full bg-white shadow-md z-40">
         <div className="flex justify-between items-center p-4">
           <img 
-            src="/img/logo.jpg" 
+            src="/img/alhabsalogo.png" 
             alt="Logo" 
             className="h-8" 
           />
@@ -206,7 +206,7 @@ const Navbar = () => {
             {/* Mobile Menu Header */}
             <div className="flex justify-between items-center mb-4">
               <img 
-                src="/img/logo.jpg" 
+                src="/img/alhabsalogo.png" 
                 alt="Saudia Logo" 
                 className="h-8" 
               />

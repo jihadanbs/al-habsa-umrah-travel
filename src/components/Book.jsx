@@ -34,21 +34,21 @@ const Book = () => {
   // Data paket untuk setiap jenis perjalanan
   const packageData = {
     'umroh-reguler': [
-      'Paket Reguler Ekonomis',
-      'Paket Reguler Standar',
-      'Paket Reguler Premium'
+      'Paket Umrah Ramadhan',
+      'Paket Umrah Syawal',
+      'Paket Umrah Private'
     ],
     'umroh-plus': [
       'Paket Plus Turki',
       'Paket Plus Dubai',
-      'Paket Plus Aqsa',
+      'Paket Plus Palestina',
       'Paket Plus Mesir'
     ],
-    'haji': [
-      'Paket Haji Khusus',
-      'Paket Haji Furoda',
-      'Paket Haji Plus'
-    ]
+    // 'haji': [
+    //   'Paket Haji Khusus',
+    //   'Paket Haji Furoda',
+    //   'Paket Haji Plus'
+    // ]
   };
 
   // Update daftar paket ketika jenis perjalanan berubah
@@ -91,25 +91,35 @@ const Book = () => {
     const travelTypeText = {
       'umroh-reguler': 'Umroh Reguler',
       'umroh-plus': 'Umroh Plus',
-      'haji': 'Haji'
+      // 'haji': 'Haji'
     };
 
-    // Format pesan
-    const message = `*Permintaan Informasi Keberangkatan*
-    
+   // Format pesan Islami
+const message = `*Permintaan Informasi Keberangkatan*
+
+Assalamu'alaikum warahmatullahi wabarakatuh,
+
+Bismillahirrahmanirrahim,
+
+Saya ingin mengajukan permintaan informasi terkait perjalanan yang direncanakan sebagai berikut:
+
 Jenis Perjalanan: ${travelTypeText[travelType]}
 Bulan Keberangkatan: ${selectedMonth}
 Jenis Paket: ${selectedPackage}
 Jumlah Penumpang: ${passengers.adults} Dewasa, ${passengers.children} Anak
 ${promoCode ? `Kode Promo: ${promoCode}` : ''}
 
-Mohon informasi lebih lanjut mengenai ketersediaan dan harga untuk paket ini. Terima kasih.`;
+Mohon kiranya dapat memberikan informasi lebih lanjut terkait ketersediaan dan harga untuk paket perjalanan ini. Jazakumullahu khairan atas perhatian dan bantuannya.
+
+Wassalamu'alaikum warahmatullahi wabarakatuh.
+`;
+
 
     // Format pesan untuk URL (encode)
     const encodedMessage = encodeURIComponent(message);
     
     // Nomor WhatsApp
-    const phoneNumber = '6281326109287';
+    const phoneNumber = '6281329196100';
     
     // URL WhatsApp
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -146,7 +156,7 @@ Mohon informasi lebih lanjut mengenai ketersediaan dan harga untuk paket ini. Te
           />
           Umroh Plus
         </label>
-        <label className="flex items-center">
+        {/* <label className="flex items-center">
           <input 
             type="radio" 
             name="travel-type" 
@@ -156,7 +166,7 @@ Mohon informasi lebih lanjut mengenai ketersediaan dan harga untuk paket ini. Te
             className="mr-2"
           />
           Haji
-        </label>
+        </label> */}
       </div>
 
       {/* Pilihan Keberangkatan */}

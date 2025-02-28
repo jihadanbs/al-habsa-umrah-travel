@@ -8,7 +8,7 @@ const SocialIcons = () => {
         href="https://api.whatsapp.com/send/?phone=%2B6281329196100&text&type=phone_number&app_absent=0" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="bg-[#222636] text-green-400 p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+        className="bg-[#222636] text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
         aria-label="WhatsApp"
       >
         <svg 
@@ -27,7 +27,7 @@ const SocialIcons = () => {
         href="https://www.instagram.com/alhabsa.travel/" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="bg-[#222636] text-red-400 p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+        className="bg-[#222636] text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
         aria-label="Instagram"
       >
         <svg 

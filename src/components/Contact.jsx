@@ -1,93 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Contact = () => {
-  // State untuk menyimpan data form
-  const [formData, setFormData] = useState({
-    nama: '',
-    email: '',
-    telepon: '',
-    subjek: '',
-    pesan: ''
-  });
-
-  // State untuk menampilkan pesan error
-  const [errors, setErrors] = useState({});
-
-  // Fungsi untuk menghandle perubahan input
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  // Fungsi validasi form
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.nama.trim()) {
-      newErrors.nama = 'Nama tidak boleh kosong';
-    }
-    
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email tidak boleh kosong';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Format email tidak valid';
-    }
-    
-    if (!formData.telepon.trim()) {
-      newErrors.telepon = 'Nomor telepon tidak boleh kosong';
-    }
-    
-    if (!formData.subjek || formData.subjek === 'Pilih Subjek') {
-      newErrors.subjek = 'Silakan pilih subjek';
-    }
-    
-    if (!formData.pesan.trim()) {
-      newErrors.pesan = 'Pesan tidak boleh kosong';
-    }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  // Fungsi untuk mengirim pesan ke WhatsApp
-  const sendToWhatsApp = (e) => {
-    e.preventDefault();
-    
-    // Validasi form
-    if (!validateForm()) {
-      return;
-    }
-    
-    // Format pesan untuk WhatsApp
-    const message = `*Pesan dari Formulir Pengaduan*
-    
-Nama: ${formData.nama}
-Email: ${formData.email}
-Telepon: +62 ${formData.telepon}
-Subjek: ${formData.subjek}
-    
-Pesan:
-${formData.pesan}`;
-
-    // Format pesan untuk URL (encode)
-    const encodedMessage = encodeURIComponent(message);
-    
-    // Nomor WhatsApp
-    const phoneNumber = '6281326109287';
-    
-    // URL WhatsApp
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    // Buka URL WhatsApp
-    window.open(whatsappURL, '_blank');
-  };
-
   return (
     <div className="container mx-auto px-6 md:px-10 lg:px-16 py-12" id='Contact'>
-      <h1 className="text-4xl font-bold text-center text-[#222636] mb-12">Hubungi Kami</h1>
+      <h1 className="text-4xl font-bold text-center text-[#222636] mb-12">KUESIONER KEPUASAN JAMAAH</h1>
       
       <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto">
         {/* Kiri pada desktop */}
@@ -111,7 +27,7 @@ ${formData.pesan}`;
                 📍 Jl. Lettu Ismail No.20, Gawanan, Sukoharjo, Jawa Tengah 57512
               </p>
               <p className="flex items-center">📞 +62 813-2919-6100</p>
-              <p className="flex items-center">✉️ alhabsa@gmail.com</p>
+              <p className="flex items-center">✉️ alhabsa.travel@gmail.com</p>
               <p className="flex items-start">
                 🕒 Jam Operasional <br/> 08:00 - 17:00 WIB
               </p>
@@ -119,91 +35,25 @@ ${formData.pesan}`;
           </div>
         </div>
         
-        {/* Kanan pada desktop */}
+        {/* Kanan pada desktop - Terintegrasi Google Form */}
         <div className="px-2">
-          <form className="bg-white shadow-lg rounded-xl p-8 border border-gray-200" onSubmit={sendToWhatsApp}>
-            <h2 className="text-2xl font-semibold text-[#222636] mb-8">Formulir Pengaduan</h2>
-            
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Nama Lengkap<span className="text-red-500">*</span></label>
-              <input 
-                type="text" 
-                name="nama"
-                value={formData.nama}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.nama ? 'border-red-500' : ''}`}
-                placeholder="Masukkan nama anda"
-              />
-              {errors.nama && <p className="text-red-500 text-sm mt-1">{errors.nama}</p>}
-            </div>
-            
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Email<span className="text-red-500">*</span></label>
-              <input 
-                type="email" 
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.email ? 'border-red-500' : ''}`}
-                placeholder="email@gmail.com"
-              />
-              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-            </div>
-            
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Nomor Telepon<span className="text-red-500">*</span></label>
-              <div className="flex">
-                <span className="inline-flex items-center px-4 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md">
-                  +62
-                </span>
-                <input 
-                  type="tel" 
-                  name="telepon"
-                  value={formData.telepon}
-                  onChange={handleChange}
-                  className={`flex-1 px-4 py-3 border rounded-r-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.telepon ? 'border-red-500' : ''}`}
-                  placeholder="882-1234-5678"
-                />
-              </div>
-              {errors.telepon && <p className="text-red-500 text-sm mt-1">{errors.telepon}</p>}
-            </div>
-            
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Subjek<span className="text-red-500">*</span></label>
-              <select 
-                name="subjek"
-                value={formData.subjek}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.subjek ? 'border-red-500' : ''}`}
+          <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-200">
+            {/* Container untuk iframe Google Form dengan ukuran responsif */}
+            <div className="relative w-full overflow-hidden pt-8" style={{ height: "720px" }}>
+              <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSepiloTNgOJNfwmGX6j-Y7C3sZ_IlNGD74PkREnh0PoOVgWoA/viewform?embedded=true" 
+                width="100%" 
+                height="100%" 
+                frameBorder="0" 
+                marginHeight="0" 
+                marginWidth="0"
+                className="absolute top-0 left-0 w-full h-full"
+                title="Kuesioner Kepuasan Jamaah PT. ALHABSA MABRURO TOUR"
               >
-                <option>Pilih Subjek</option>
-                <option>Informasi Paket Umroh</option>
-                <option>Kendala Pemesanan</option>
-                <option>Testimoni & Masukan</option>
-              </select>
-              {errors.subjek && <p className="text-red-500 text-sm mt-1">{errors.subjek}</p>}
+                Memuat...
+              </iframe>
             </div>
-            
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Pesan<span className="text-red-500">*</span></label>
-              <textarea 
-                name="pesan"
-                value={formData.pesan}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-[#222636] focus:outline-none ${errors.pesan ? 'border-red-500' : ''}`}
-                rows="4"
-                placeholder="Masukkan isi pesan anda"
-              ></textarea>
-              {errors.pesan && <p className="text-red-500 text-sm mt-1">{errors.pesan}</p>}
-            </div>
-            
-            <button 
-              type="submit" 
-              className="w-full bg-[#222636] text-white py-3 rounded-md hover:bg-[#2E3650] transition-colors"
-            >
-              Kirim Pesan
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>

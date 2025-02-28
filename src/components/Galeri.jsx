@@ -7,23 +7,23 @@ const Galeri = () => {
   const galleryImages = [
     {
       src: "/img/foto4.jpg",
-      alt: "Jamaah Umrah 1"
+      alt: "Rombongan Jamaah Umrah"
     },
     {
       src: "/img/foto2.jpg",
-      alt: "Jamaah Umrah 2"
+      alt: "Pelaksaan Ibadah di Masjidil Haram"
     },
     {
       src: "/img/foto3.jpg",
-      alt: "Jamaah Umrah 3"
+      alt: "Jamaah Umrah Al Habsa"
     },
     {
       src: "/img/foto1.jpg",
-      alt: "Jamaah Umrah 4"
+      alt: "Udaibiyyah"
     },
     {
       src: "/img/foto5.jpg",
-      alt: "Jamaah Umrah 5"
+      alt: "City Tour - Turkey"
     }
   ];
   

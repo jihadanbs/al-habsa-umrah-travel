@@ -9,17 +9,17 @@ const Header = () => {
   // Data slide carousel
   const slides = [
     {
-      title: 'Dapatkan diskon 22% untuk penerbangan ke Arab Saudi',
+      title: 'Perjalanan Umrah Bersama Al Habsa',
       backgroundImage: '/img/banner1.jpg',
-      ctaText: 'Pesan Sekarang',
+      ctaText: 'Daftar Sekarang',
       ctaLink: '#Book'
     },
     // Tambahkan slide lainnya sesuai kebutuhan
     {
-      title: 'Temukan Keajaiban Arab Saudi',
+      title: 'Daftar Paket Umrah Ramadhan - Segera',
       backgroundImage: '/img/banner2.jpg',
-      ctaText: 'Jelajahi Destinasi',
-      ctaLink: '#destinasi'
+      ctaText: 'Daftar Sekarang',
+      ctaLink: '#Book'
     }
   ];
 

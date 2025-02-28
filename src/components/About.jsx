@@ -6,7 +6,7 @@ const About = () => {
       {/* Kiri pada mode Desktop*/}
       <div className="lg:w-1/2 w-full mb-6 lg:mb-0 lg:mr-8">
         <img
-          src="/img/foto1.jpg"
+          src="/img/tentang-kami.jpg"
           alt="Kaabah at Masjidil Haram"
           className="w-full h-auto object-cover rounded-lg shadow-lg"
         />
@@ -23,20 +23,19 @@ const About = () => {
         
         <div className="text-gray-600 space-y-4">
           <p className="text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aspernatur hic! Quibusdam illo ut placeat dignissimos quasi ipsum hic distinctio?
-          </p>
-          
-          <p className="text-base">
-            Lebih dari 20.000+ jamaah telah mempercayakan penyelenggaraan 
-            haji dan umrahnya bersama Buttonscarves Travel. Buttonscarves 
-            Travel telah memiliki izin Resmi dari Kementrian Agama RI untuk 
-            penyelenggara Umroh
+          Berdiri sejak tahun 2019, PT. ALHABSA MABRURO TOUR memiliki pengalaman di bidang pelayanan jasa Tour & Travel, khususnya di pelayanan jasa UMRAH, oleh karena itu kualitas pelayanan dan kepercayaan jamaah menjadi prioritas utama kami dari awal berdiri sampai saat ini, dan akan terus meningkatkan kualitas pelayanan.
           </p>
         </div>
         
-        <button className="mt-6 bg-[#222636] text-white py-2 px-4 rounded-md hover:bg-[#2E3650] transition-colors">
-          Tentang Kami
-        </button>
+        <a 
+          href="/img/company-profile.pdf" 
+          download="Company Profile - Al Habsa.pdf"
+        >
+          <button className="mt-6 bg-[#222636] text-white py-2 px-4 rounded-md hover:bg-[#2E3650] transition-colors">
+            Tentang Kami
+          </button>
+        </a>
+
       </div>
     </div>
   );
