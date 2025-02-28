@@ -18,7 +18,7 @@ const About = () => {
             Tentang Kami
         </h3>
         <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-800">
-          Memberikan Pelayanan Haji & Umrah Yang Terbaik Untuk Para Jamaah
+          Memberikan Pelayanan Umrah Yang Terbaik Untuk Para Jamaah
         </h2>
         
         <div className="text-gray-600 space-y-4">
