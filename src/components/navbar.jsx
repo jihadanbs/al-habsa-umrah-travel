@@ -50,7 +50,7 @@ const Navbar = () => {
           hidden md:block fixed top-0 left-0 w-full z-40 transition-all duration-300
           ${isScrolled 
             ? 'bg-[#D3D3D3] shadow-md text-white' 
-            : 'bg-transparent text-white'
+            : 'bg-transparent text-white bg-gradient-to-t from-transparent to-black/50'
           }
         `}
       >

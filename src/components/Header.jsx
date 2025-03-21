@@ -58,7 +58,7 @@ const Header = () => {
             backgroundPosition: 'center'
           }}
         >
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center px-4 md:px-20 lg:px-32">
+          <div className="absolute inset-0 bg-black bg-gradient-to-b from-transparent to-black bg-opacity-40 flex items-center px-4 md:px-20 lg:px-32">
             <div className="text-white max-w-2xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 {slide.title}
