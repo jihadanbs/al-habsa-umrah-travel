@@ -9,12 +9,14 @@ export const InfiniteMovingCards = ({
   speed = "fast",
   pauseOnHover = true,
   className,
+  imageClassName,
 }: {
   items: { src: string; alt: string }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
+  imageClassName?: string;
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
@@ -67,7 +69,10 @@ export const InfiniteMovingCards = ({
             <img
               src={item.src}
               alt={item.alt}
-              className="w-full h-full object-contain px-4 grayscale group-hover:grayscale-0 transition-all duration-300"
+              className={cn(
+                "object-contain px-4 grayscale group-hover:grayscale-0 transition-all duration-300",
+                imageClassName || "w-full h-full"
+              )}
             />
           </li>
         ))}
