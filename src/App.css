@@ -9,3 +9,7 @@
 .text-utama{
   @apply text-blue-500
 }
+
+.FaAngleRight{
+  @apply mr-1 text-slate-700
+}
