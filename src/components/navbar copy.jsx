@@ -1,13 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  
-  // Ref untuk tracking beam
-  const tracingBeamRef = useRef(null);
   
   // Mencegah navbar tidak menutup ketika di scroll
   useEffect(() => {
@@ -22,60 +18,28 @@ const Navbar = () => {
     };
   }, [showMobileMenu, showSearchModal]);
 
-  // Simulasi loading saat halaman pertama kali dibuka
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-    
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
 
-  // scroll effect & tracing beam
-  useEffect(() => {
+   // scroll effect
+   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
-      // Update tracing beam position
-      updateTracingBeam();
     };
-    
-    const updateTracingBeam = () => {
-      if (!tracingBeamRef.current) return;
-      
-      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-      const windowHeight = scrollHeight - clientHeight;
-      const progress = scrollTop / windowHeight;
-      
-      // Update tracing beam width based on scroll progress (0% to 100%)
-      tracingBeamRef.current.style.width = `${progress * 100}%`;
-      
-      // Only show beam when scrolling has begun
-      tracingBeamRef.current.style.opacity = scrollTop > 5 ? '1' : '0';
-    };
-    
     // Tambah scroll event listener
     window.addEventListener('scroll', handleScroll);
-    
-    // Initial position
-    updateTracingBeam();
-    
     // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  // Array pada navbar link
+  // Array npada  navbar link
   const navItems = [
     { label: 'Beranda', href: '#Home' },
     { label: 'Pemesanan', href: '#Book' },
     { label: 'Tentang Kami', href: '#About' },
     { label: 'Galeri', href: '#Galeri' },
     { label: 'Kontak', href: '#Contact' },
+    
   ];
 
   return (
@@ -83,33 +47,20 @@ const Navbar = () => {
       {/* Desktop Navbar */}
       <div 
         className={`
-          hidden md:block fixed top-0 left-0 w-full transition-all duration-300
+          hidden md:block fixed top-0 left-0 w-full  transition-all duration-300
           ${isScrolled 
             ? 'bg-[#D3D3D3] shadow-md text-white' 
             : 'bg-transparent text-white bg-gradient-to-t from-transparent to-black/50'
           }
         `}
       >
-        {/* Tracing Beam - inspired by aceternity UI */}
-        <div 
-          className="absolute top-0 left-0 right-0 h-0.5 bg-transparent overflow-hidden"
-        >
-          <div 
-            ref={tracingBeamRef}
-            className="h-full bg-gradient-to-r from-green-500 to-emerald-400 w-0 transition-opacity duration-300 opacity-0"
-            style={{
-              boxShadow: '0 0 8px 1px rgba(76, 175, 80, 0.5)'
-            }}
-          />
-        </div>
-        
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src="/img/alhabsalogo.png" 
               alt="Logo" 
-              className="h-8 mr-8"
+              className={`h-8 mr-8 `}
             />
           </div>
 
@@ -175,7 +126,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* modal untuk search mode Desktop */}
+      {/* modal untuk searc mode Desktop*/}
       {showSearchModal && (
         <div className="fixed inset-0 bg-white z-50 flex items-start">
           <div className="w-full p-4">
@@ -217,23 +168,9 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Toggle untuk Mobile Navbar */}
-      <div 
-        className="md:hidden fixed top-0 left-0 w-full bg-white shadow-md z-40"
-      >
-        {/* Tracing Beam untuk Mobile */}
-        <div 
-          className="absolute top-0 left-0 right-0 h-0.5 bg-transparent overflow-hidden"
-        >
-          <div 
-            className="h-full bg-gradient-to-r from-green-500 to-emerald-400 transition-all duration-300"
-            style={{
-              width: `${isLoading ? '100%' : '0%'}`,
-              boxShadow: '0 0 8px 1px rgba(76, 175, 80, 0.5)'
-            }}
-          />
-        </div>
-        
+      
+      {/*  Toggle untuk Mobile Navbar */}
+      <div className="md:hidden fixed top-0 left-0 w-full bg-white shadow-md z-40">
         <div className="flex justify-between items-center p-4">
           <img 
             src="/img/alhabsalogo.png" 
@@ -319,6 +256,7 @@ const Navbar = () => {
               </button>
             </div>
 
+
             {/* Mode mobile untuk nav link */}
             <nav className="space-y-4 mb-6">
               {navItems.map((item, index) => (
@@ -332,6 +270,8 @@ const Navbar = () => {
                 </a>
               ))}
             </nav>
+
+           
 
             {/* Send Feedback Button */}
             <div className="fixed bottom-0 right-0 m-4">
