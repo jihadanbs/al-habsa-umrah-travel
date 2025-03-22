@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react'; React 19 Tidak Lagi Membutuhkan import React
 
 const About = () => {
   return (
