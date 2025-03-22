@@ -25,7 +25,7 @@ const Mitra = () => {
     return (
       <div className="p-8">
         {/* Bagian logo pesawat terbang */}
-        <div className="mb-12">
+        <div className="mb-4">
           <InfiniteMovingCards items={airlines} direction="right" speed="slow" />
         </div>
   
