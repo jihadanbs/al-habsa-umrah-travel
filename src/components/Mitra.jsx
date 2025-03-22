@@ -11,23 +11,23 @@ const Mitra = () => {
       { src: "/img/mitra/saudi.svg", alt: "Saudi Arabian Airlanes" },
     ];
   
-    const banks = [
-      { src: "/img/mitra/bca.svg", alt: "BCA" },
-      { src: "/img/mitra/bni.svg", alt: "BNI" },
-      { src: "/img/mitra/bank-mandiri.svg", alt: "Mandiri" },
-    ];
+    // const banks = [
+    //   { src: "/img/mitra/bca.svg", alt: "BCA" },
+    //   { src: "/img/mitra/bni.svg", alt: "BNI" },
+    //   { src: "/img/mitra/bank-mandiri.svg", alt: "Mandiri" },
+    // ];
   
     return (
-      <div className="p-8">
+      <div className="py-8 px-6 sm:px-12 md:px-16 lg:px-44">
         {/* Bagian logo pesawat terbang */}
-        <div className="mb-4">
-          <InfiniteMovingCards items={airlines} direction="right" speed="slow" imageClassName="w-50 h-20 object-contain" />
+        <div className="mb-2">
+          <InfiniteMovingCards items={airlines} direction="right" speed="slow" imageClassName="w-50 h-28 object-contain" />
         </div>
   
-        {/* Bagian logo bank */}
+        {/* Bagian logo bank
         <div>
           <InfiniteMovingCards items={banks} direction="left" speed="slow" imageClassName="w-30 h-12 object-contain" />
-        </div>
+        </div> */}
       </div>
     );
   };
