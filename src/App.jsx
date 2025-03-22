@@ -8,6 +8,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import './App.css'
 import SocialIcons from './components/SocialIcons'
+import Mitra from './components/Mitra'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Book/>
       <About/>
       <Galeri/>
+      <Mitra/>
      <Contact/>
      <Footer/>
 
