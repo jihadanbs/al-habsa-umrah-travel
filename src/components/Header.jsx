@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import Navbar from './navbar';
 
@@ -69,7 +69,7 @@ const Header = () => {
                 href={slide.ctaLink}
                 className="inline-block bg-[#222636] text-white px-6 py-3 rounded-md hover:bg-[#2E3650] transition-colors relative z-20 cursor-pointer"
                 onClick={(e) => {
-                  console.log("Tombol diklik");
+                  console.log("Tombol diklik", e.target);
                   //tambahan kode yang ingin dijalankan saat tombol diklik nantinya
                 }}
               >

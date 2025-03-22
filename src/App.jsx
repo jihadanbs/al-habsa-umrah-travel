@@ -1,5 +1,3 @@
-
-
 import Header from './components/Header'
 import Book from './components/Book'
 import About from './components/About'
@@ -9,7 +7,6 @@ import Footer from './components/Footer'
 import './App.css'
 import SocialIcons from './components/SocialIcons'
 import Mitra from './components/Mitra'
-
 
 function App() {
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 
 const Galeri = () => {
   const [hovered, setHovered] = useState(null); // State untuk melacak gambar yang dihover
