@@ -1,15 +1,20 @@
 import React from 'react';
+import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 
 const About = () => {
   return (
-    <div id='About' className="mt-8 max-w-5xl mx-10 lg:mx-auto flex flex-col lg:flex-row items-center justify-center overflow-hidden">
+    <div id='About' className="mt-8 max-w-5xl mx-10 lg:mx-auto flex flex-col lg:flex-row items-center justify-center lg:overflow-visible">
       {/* Kiri pada mode Desktop*/}
       <div className="lg:w-1/2 w-full mb-6 lg:mb-0 lg:mr-8">
+      <CardContainer className='w-full'>
+      <CardItem translateZ="100">
         <img
           src="/img/tentang-kami.jpg"
           alt="Kaabah at Masjidil Haram"
-          className="w-full h-auto object-cover rounded-lg shadow-lg"
+          className="w-full h-auto object-cover rounded-lg shadow-lg md:px-4 lg:px-0 px-0"
         />
+        </CardItem>
+      </CardContainer>
       </div>
 
       {/* Kana pada mode Desktop */}
