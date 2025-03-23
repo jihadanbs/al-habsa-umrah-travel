@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import './App.css'
 import SocialIcons from './components/SocialIcons'
 import Mitra from './components/Mitra'
+import Fasilitas from './components/Fasilitas'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Header/>
       <Book/>
       <About/>
+      <Fasilitas/>
       <Galeri/>
       <Mitra/>
      <Contact/>
