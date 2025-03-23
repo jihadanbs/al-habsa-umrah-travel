@@ -3,7 +3,9 @@ import { FaAngleRight } from "react-icons/fa";
 import { IoCallSharp } from "react-icons/io5";
 
 import { MdEmail } from "react-icons/md";
+import { AiFillTikTok } from "react-icons/ai";
 
+import { FaSquareInstagram } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className="bg-[#000000]  text-[#D3D3D3] py-8">
@@ -15,7 +17,7 @@ const Footer = () => {
             <p className="text-sm">
              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam quibusdam debitis voluptate illo, excepturi blanditiis veritatis aliquam ipsum nesciunt iste?
             </p>
-            <div className="text-sm mt-2">
+            <div className="text-sm mt-4">
                 <div className="flex items-center">
                 <IoCallSharp className="mr-2"/>
                 info@Al Habsa.com
@@ -24,7 +26,14 @@ const Footer = () => {
                   <MdEmail className="mr-2"/>
                 +6281333333
                 </div>
-             
+            </div>
+            <div className="flex gap-2 mt-3 ">
+             <a href="">
+             <FaSquareInstagram className="w-6 h-6"/>
+             </a>
+            <a href="">
+            <AiFillTikTok className="w-6 h-6" />
+            </a>
             </div>
           </div>
 
