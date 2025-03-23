@@ -1,5 +1,5 @@
-import React from 'react';
-import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+// import React from 'react';
+import { CardContainer, CardItem } from "./ui/3d-card";
 
 const About = () => {
   return (
