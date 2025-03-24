@@ -29,10 +29,10 @@ const Footer = () => {
             </div>
             <div className="flex gap-2 mt-3 ">
              <a href="">
-             <FaSquareInstagram className="w-6 h-6"/>
+             <FaSquareInstagram className="w-4 h-4 md:w-6 md-h-6"/>
              </a>
             <a href="">
-            <AiFillTikTok className="w-6 h-6" />
+            <AiFillTikTok className="w-4 h-4 md:w-6 md-h-6" />
             </a>
             </div>
           </div>
