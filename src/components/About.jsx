@@ -37,7 +37,7 @@ const About = () => {
           download="Company Profile - Al Habsa.pdf"
         >
           <button className="mt-6 bg-[#222636] text-white py-2 px-4 rounded-md hover:bg-[#2E3650] transition-colors">
-            Tentang Kami
+            Profile Al Habsa
           </button>
         </a>
 

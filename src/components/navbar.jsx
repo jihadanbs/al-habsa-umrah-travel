@@ -334,8 +334,8 @@ const Navbar = () => {
             </nav>
 
             {/* Send Feedback Button */}
-            <div className="fixed bottom-0 right-0 m-4">
-              <button className="bg-green-600 text-white px-4 py-2 rounded-lg">
+            <div className="fixed bottom-4 center-4 m-2 sm:m-4">
+              <button className="bg-[#2E3650] text-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded-lg">
                 Login
               </button>
             </div>

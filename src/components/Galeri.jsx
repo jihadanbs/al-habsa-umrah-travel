@@ -56,7 +56,7 @@ const Galeri = () => {
   return (
     <div className="container mx-auto px-4 py-8" id="Galeri">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        Galeri Perjalanan Jamaah
+        GALERI PERJALANAN UMRAH
       </h2>
 
       <div className="flex flex-col gap-4 max-w-5xl mx-auto">
@@ -77,7 +77,7 @@ const Galeri = () => {
                 className={`w-full h-64 object-cover rounded-lg transition-all duration-300 ${
                   hovered === index ? 'scale-150' : 'scale-100'
                 } ${
-                  hovered !== null && hovered !== index ? 'blur-sm scale-[0.98]' : ''
+                  hovered !== null && hovered !== index ? 'scale-[0.98]' : ''
                 }`}
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
@@ -104,7 +104,7 @@ const Galeri = () => {
                 className={`w-full h-64 object-cover rounded-lg transition-all duration-300 ${
                   hovered === index + 3 ? 'scale-150' : 'scale-100'
                 } ${
-                  hovered !== null && hovered !== index + 3 ? 'blur-sm scale-[0.98]' : ''
+                  hovered !== null && hovered !== index + 3 ? 'scale-[0.98]' : ''
                 }`}
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
