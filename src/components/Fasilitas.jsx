@@ -3,7 +3,7 @@ import { FaUtensils, FaPassport, FaSuitcaseRolling, FaUserAlt, FaHotel, FaBus, F
   const Fasilitas = () => {
     const facilities = [
       { icon: <FaUtensils />, title: "Konsumsi", description: "Konsumsi yang terjamin dari memulai perjalanan sampai selesai" },
-      { icon: <FaPassport />, title: "Visa Haji & Umrah", description: "Pengurusan visa haji & umrah untuk keperluan ibadah di tanah suci" },
+      { icon: <FaPassport />, title: "Visa Umrah", description: "Pengurusan visa umrah untuk keperluan ibadah di tanah suci" },
       { icon: <FaSuitcaseRolling />, title: "Perlengkapan Umrah", description: "Paket umrah dengan perlengkapan kebutuhan ibadah yang lengkap" },
       { icon: <FaUserAlt />, title: "TL/ Mutawwif", description: "Umrah ditemani dengan leader dan Muthawif yang tersertifikasi" },
       { icon: <FaHotel />, title: "Hotel Penginapan", description: "Akomodasi hotel / penginapan terbaik dan termyaman" },
