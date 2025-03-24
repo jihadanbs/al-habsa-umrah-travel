@@ -1,7 +1,7 @@
-import { StrictMode } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-dom/client';
-import App from './App.jsx'
-import path from 'path';
+import React from 'react';
+import ReactDOM from 'react-dom/client';  
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App.jsx';
 
 const router = createBrowserRouter([
   {
