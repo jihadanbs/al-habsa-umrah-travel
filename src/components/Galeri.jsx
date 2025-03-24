@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Galeri = () => {
   const [hovered, setHovered] = useState(null); // State untuk melacak gambar yang dihover
@@ -116,9 +117,9 @@ const Galeri = () => {
       </div>
 
       <div className="text-center mt-8">
-        <button className="bg-[#222636] text-white py-2 px-4 rounded-md hover:bg-[#2E3650] transition-colors">
+        <Link to={'/card'} className="bg-[#222636] text-white py-3 px-4 rounded-md hover:bg-[#2E3650] transition-colors">
           Lihat Paket Umrah
-        </button>
+        </Link>
       </div>
     </div>
   );
