@@ -6,14 +6,26 @@ import { FaSquareInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#222636] text-gray-300 py-12">
-      <div className="container mx-auto px-6 lg:px-36">
+    <footer className="relative text-gray-300 py-12 bg-[#222636]">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-100"
+        style={{
+          backgroundImage: "url('https://png.pngtree.com/background/20230524/original/pngtree-kemalists-in-mecca-worship-the-kaaba-kabulisal-mubarak-at-picture-image_2707588.jpg')",
+        }}
+      ></div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#222636] opacity-90"></div>
+
+      {/* Content */}
+      <div className="relative container mx-auto px-6 lg:px-36">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Tentang Kami */}
           <div>
             <h3 className="text-xl font-semibold text-white mb-4">Tentang Kami</h3>
             <p className="text-sm leading-relaxed">
-              Al Habsa Travel adalah perusahaan perjalanan profesional yang menghadirkan pengalaman umrah yang nyaman dan berkesan
+              Kami adalah perusahaan yang bergerak di bidang X dengan komitmen memberikan layanan terbaik bagi pelanggan kami.
             </p>
             <div className="mt-4 space-y-2">
               <div className="flex items-center text-sm">
@@ -52,7 +64,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold text-white mb-4">Layanan</h3>
             <ul className="text-sm space-y-2">
-              {["Layanan Paket Umrah", ].map((item, index) => (
+              {["Layanan Paket Umrah"].map((item, index) => (
                 <li key={index} className="flex items-center hover:text-yellow-400 transition">
                   <FaAngleRight className="mr-2 text-yellow-500" />
                   <a href="#">{item}</a>
