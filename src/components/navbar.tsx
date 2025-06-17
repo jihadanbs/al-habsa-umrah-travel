@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -322,8 +323,8 @@ const Navbar: React.FC<NavbarProps> = ({
               </svg>
             </button>
 
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className={`pointer-events-none flex items-center gap-2 font-medium duration-300 ${
                 isScrolled
                   ? "text-[#222636] hover:font-semibold"
@@ -332,7 +333,7 @@ const Navbar: React.FC<NavbarProps> = ({
             >
               <FaRegCircleUser className="text-2xl" />
               <span>MASUK</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -525,7 +526,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   {/* Menggunakan komponen MotionLink untuk menggabungkan motion dengan anchor */}
                   <MotionLink
                     href="/login"
-                    className="mt-4 flex items-center justify-center gap-3 rounded-full bg-[#222636] px-4 py-3 text-lg text-white transition-opacity hover:opacity-90"
+                    className="pointer-events-none mt-4 flex items-center justify-center gap-3 rounded-full bg-[#222636] px-4 py-3 text-lg text-white transition-opacity hover:opacity-90"
                   >
                     <FaRegCircleUser className="text-xl" />
                     Masuk
