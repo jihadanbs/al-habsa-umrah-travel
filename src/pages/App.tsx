@@ -13,7 +13,7 @@ import UmrahSimulator from "../components/UmrahSimulator";
 import Process from "../components/process-step/ProcessSteps";
 import { useState } from "react";
 import type { AppProps } from "@/types";
-import "../app.css";
+import "../App.css";
 
 function App({ umrahPackages }: AppProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
