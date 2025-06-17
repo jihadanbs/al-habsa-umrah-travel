@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AiFillTikTok } from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
@@ -12,7 +13,7 @@ const informasiLinks = [
 ];
 
 const layananLink = [
-  { label: "Paket Umrah", href: "/package-schedule" },
+  { label: "Paket Umrah", href: "/umrah-packages" },
   { label: "Simulator Tabungan Umrah", href: "/umrah-savings-simulator" },
 ];
 
@@ -73,12 +74,12 @@ const Footer: React.FC = () => {
                   className="group flex items-center transition-all"
                 >
                   <FaAngleRight className="mr-2 text-[#B49164]" />
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="group-hover:text-white hover:underline"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -94,12 +95,12 @@ const Footer: React.FC = () => {
                   className="group flex items-center transition-all"
                 >
                   <FaAngleRight className="mr-2 text-[#B49164]" />
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="group-hover:text-white hover:underline"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

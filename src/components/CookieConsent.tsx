@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const CookieConsent: React.FC = () => {
@@ -48,23 +49,23 @@ const CookieConsent: React.FC = () => {
             from your use of their services. <br />
             By accepting, you agree to the use of these cookies. To learn more,
             view our{" "}
-            <a
-              href="/cookie-policy"
+            <Link
+              to="/cookie-policy"
               className="text-[#2E3650] underline"
               target="_blank"
               rel="noopener noreferrer"
             >
               Cookie Policy
-            </a>{" "}
+            </Link>{" "}
             &{" "}
-            <a
-              href="/privacy-policy"
+            <Link
+              to="/privacy-policy"
               className="text-[#2E3650] underline"
               target="_blank"
               rel="noopener noreferrer"
             >
               Privacy Policy
-            </a>
+            </Link>
             .
           </p>
         </div>
