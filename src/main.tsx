@@ -14,7 +14,7 @@ import CookiePolicy from "./pages/cookie-policy";
 import PrivacyPolicy from "./pages/privacy-policy";
 import TermCondition from "./pages/term-condition";
 import PaymentMethod from "./pages/payment-method";
-import Contact from "./components/Contact";
+import Contact from "./pages/ContactPages";
 
 const router = createBrowserRouter([
   {
