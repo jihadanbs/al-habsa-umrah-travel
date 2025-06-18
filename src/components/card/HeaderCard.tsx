@@ -21,6 +21,8 @@ const HeaderCard: React.FC = () => {
     title = "Syarat & Ketentuan";
   } else if (url === "/process-steps") {
     title = "10 Langkah Menuju Umrah";
+  } else if (url === "/payment-method") {
+    title = "Petunjuk Pembayaran";
   }
 
   return (

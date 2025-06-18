@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const About: React.FC = () => {
@@ -87,8 +88,8 @@ const About: React.FC = () => {
                 <span className="xs:inline hidden">Unduh Profile Al Habsa</span>
                 <span className="xs:hidden">Unduh Profile</span>
               </a>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex transform items-center justify-center gap-2 rounded-lg border border-[#222636] bg-white px-4 py-2.5 text-sm font-medium text-[#222636] shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
               >
                 <svg
@@ -106,7 +107,7 @@ const About: React.FC = () => {
                   />
                 </svg>
                 Hubungi Kami
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
