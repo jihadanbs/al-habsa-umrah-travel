@@ -35,16 +35,6 @@ const HeaderCard: React.FC = () => {
           backgroundPosition: "center",
         }}
       >
-        {/* Overlay dan Konten Utama */}
-
-        {/* lama */}
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 bg-opacity-50 flex items-center px-4 md:px-20 lg:px-32">
-          <div className="text-white">
-            <h1 className="text-5xl font-bold">{title}</h1>
-          </div>
-        </div> */}
-
-        {/* baru */}
         <div
           className={`absolute inset-0 bg-gradient-to-b from-transparent ${
             url === "/process-steps" ? "to-black/100" : "to-black/80"
